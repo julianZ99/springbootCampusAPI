@@ -15,6 +15,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -45,8 +47,14 @@ public class User implements UserDetails{
     @Column (name = "email", nullable = false)
     private String email;
 
-    @Column(name = "role")
-    private String role;
+    @ManyToMany
+    @JoinTable(
+        name = "users_roles",
+        joinColumns = @JoinColumn(
+        name = "user_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(
+        name = "role_id", referencedColumnName = "id"))
+    private Collection<Role> roles;
 
     @ManyToOne
     @JoinColumn(name = "career_id")
@@ -70,7 +78,6 @@ public class User implements UserDetails{
         this.dni=dni;
         this.password = password;
         this.email = email;
-        this.role = "STUDENT";
     }
 
     @Override
