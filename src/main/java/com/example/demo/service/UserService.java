@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +26,7 @@ public class UserService {
 
     public UserDTO assignRole(Long userId, String role) {
         User user = userRepo.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
-        user.setRoles(Arrays.asList(roleRepo.findByName(role)));
+        user.setRoles(roleRepo.findByName(role));
         userRepo.save(user);
         return new UserDTO(user);
     }
