@@ -26,6 +26,9 @@ public class Result {
     @Column(name = "recorded_at", nullable = false)
     private LocalDateTime recordedAt;
 
+    @Column(name = "score", nullable = false)
+    private Long score;
+
     @OneToOne
     @JoinColumn(name = "registration_id", nullable = false, unique = true)
     private Registration registration;
