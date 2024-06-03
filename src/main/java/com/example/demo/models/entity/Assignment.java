@@ -41,4 +41,9 @@ public class Assignment {
     @JoinColumn(name = "course_id")
     private Course course;
 
+    @Column (name = "status", nullable = false)
+    private String status;
+
+    @Column (name = "score")
+    private String score;
 }

@@ -1,8 +1,8 @@
 package com.example.demo.models.entity;
 
-import java.util.Set;
+import java.util.Date;
+import java.util.List;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,22 +15,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "careers")
-public class Career {
+@Table(name = "semesters")
+public class Semester {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "career_id", nullable = false)
     private Long id;
 
-    @Column (name = "name", nullable = false)
     private String name;
 
-    @Column (name = "desc", nullable = false)
-    private String desc;
+    private Date startDate;
+    private Date endDate;
 
-    @OneToMany(mappedBy = "career")
-    private Set<Student> students;
-
-    @OneToMany(mappedBy = "career")
-    private Set<Course> courses;
+    @OneToMany(mappedBy = "semester")
+    private List<Registration> registrations;
 }
