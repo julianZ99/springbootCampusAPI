@@ -16,9 +16,13 @@
   Las contraseñas de los usuarios se almacenan de forma segura utilizando algoritmos de encriptación.
 
 ## Tecnologías Utilizadas
- Java/Spring Boot
- Spring Security
- JWT (JSON Web Token)
- Hibernate/JPA
- MariaDB 
- Maven 
+ * Java/Spring Boot.
+ * Spring Security.
+ * JWT (JSON Web Token).
+ * Hibernate/JPA.
+ * MariaDB.
+ * Maven.
+
+ ## Schema DB
+<img src='./src/main/resources/db_schema.png' width='100%' >
+ 
