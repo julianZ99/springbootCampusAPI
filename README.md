@@ -7,7 +7,7 @@
 ### Gestión de usuarios: 
   Registro, inicio de sesión, actualización de perfil, etc.
 ### Diferentes roles:
-  Rol Estudiante, Rol Profesor y Rol administrados, cada uno con sus respectivos permisos.
+  Rol Estudiante, Rol Profesor y Rol Administrador, cada uno con sus respectivos permisos.
 ### Gestión de cursos: 
   Creación, actualización, eliminación y búsqueda de cursos.
 ### Seguridad: 
